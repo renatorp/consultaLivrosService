@@ -26,10 +26,10 @@ namespace consultaLivrosService.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            if (!isAuthenticated().Result) {
+            //if (!isAuthenticated().Result) {
                 // return Forbid(); TODO: Verificar: retorna erro no servidor
-                return Unauthorized();
-            }
+            //    return Unauthorized();
+            //}
             return Ok(livros.Values.ToList());
         }
 
@@ -37,10 +37,10 @@ namespace consultaLivrosService.Controllers
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
-            if (!isAuthenticated().Result) {
+            //if (!isAuthenticated().Result) {
                 // return Forbid(); TODO: Verificar: retorna erro no servidor
-                return Unauthorized();
-            }
+            //    return Unauthorized();
+            //}
 
             Livro l = null;
             livros.TryGetValue(id, out l);
